@@ -14,6 +14,7 @@ jobs:
           inputs: TestAppSite
           module-name: TestAppSite
           format: html
+          output: ./docs
       - name: Upload Documentation to Wiki
         uses: SwiftDocOrg/github-wiki-publish-action@v1
         with:
