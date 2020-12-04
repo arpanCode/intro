@@ -11,7 +11,7 @@ jobs:
       - name: Generate Documentation
         uses: SwiftDocOrg/swift-doc@master
         with:
-          inputs: ./TestAppSite
+          inputs: ./TestAppSite/TestAppSite
           module-name: TestAppSite
           output: Documentation
       - name: Upload Documentation to Wiki
