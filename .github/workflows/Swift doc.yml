@@ -18,18 +18,25 @@ jobs:
           module-name: "TestAppSite"
           output: "Documentation"
           format: "html"
-        
-      - name: Permissions
-        run: sudo chown -R $(whoami) /usr/local/lib/node_modules
-        
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v2
+          
+      - name: GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
-          target_branch: main
-          build_dir: Documentation
-        env:
-          GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}}  
+          keep_history: true
+          # Build directory to deploy
+          build_dir:  Documentation
+
+#       - name: Permissions
+#         run: sudo chown -R $(whoami) /usr/local/lib/node_modules
+        
+#       - name: Deploy to GitHub Pages
+#         if: success()
+#         uses: crazy-max/ghaction-github-pages@v2
+#         with:
+#           target_branch: main
+#           build_dir: Documentation
+#         env:
+#           GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}}  
       
 #       - name: Deploy
 #         uses: peaceiris/actions-gh-pages@v3
