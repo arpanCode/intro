@@ -20,7 +20,7 @@ jobs:
           format: "html"
 
       - name: Permissions
-        run: sudo chown -R $USER:$USER /home/github/actions-runner/_work/intro.io
+        run: sudo chown -R $USER:$USER /home/runner/work/intro.io
           
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
