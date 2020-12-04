@@ -29,7 +29,7 @@ jobs:
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
         with:
           # The name of the directory that containing the content to be published
-          dir: "Documentation"
+          dir: Documentation
           # The name of the remote branch that publishing source for GitHub Pages site
           branch: main
           # The remote repository that publishing source for GitHub Pages site, defaults to current repo and is formatted like 'user/repo-name'
