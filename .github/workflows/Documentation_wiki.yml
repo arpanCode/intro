@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+     
       - name: Generate Documentation
         uses: SwiftDocOrg/swift-doc@master
         with:
@@ -19,10 +20,9 @@ jobs:
           output: "Documentation"
             
 #       Publish to Wikki
-            
-       - name: Upload Documentation to Wiki
-         uses: SwiftDocOrg/github-wiki-publish-action@v1
-         with:
+      - name: Upload Documentation to Wiki
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
+        with:
            path: "Documentation"
-         env:
+        env:
            GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
