@@ -11,7 +11,7 @@ jobs:
       - name: Generate Documentation
         uses: SwiftDocOrg/swift-doc@master
         with:
-          inputs: TestAppSite
+          inputs: ./TestAppSite
           module-name: TestAppSite
           format: html
           output: ./docs
