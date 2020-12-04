@@ -25,6 +25,8 @@ jobs:
           keep_history: true
           # Build directory to deploy
           build_dir:  Documentation
+        env:
+           GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}} 
 
 #       - name: Permissions
 #         run: sudo chown -R $(whoami) /usr/local/lib/node_modules
