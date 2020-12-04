@@ -20,7 +20,7 @@ jobs:
           format: "html"
 
       - name: Permissions
-        run: sudo npm cache clean --force --unsafe-perm     
+        run: sudo chown -R $USER:$USER /home/github/actions-runner/_work/intro.io
           
       - name: GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
