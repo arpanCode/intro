@@ -13,11 +13,10 @@ jobs:
         with:
           inputs: ./TestAppSite
           module-name: TestAppSite
-          format: html
-          output: ./docs
+          output: Documentation
       - name: Upload Documentation to Wiki
         uses: SwiftDocOrg/github-wiki-publish-action@v1
         with:
           path: "Documentation"
         env:
-          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
