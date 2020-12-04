@@ -19,9 +19,9 @@ jobs:
           output: "Documentation"
           format: "html"
         
-      - name: Install Dependencies
-        run: sudo npm install
-
+      - name: Permissions
+        run: sudo chmod 777 ./Documentation
+        
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
