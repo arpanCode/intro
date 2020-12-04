@@ -35,18 +35,14 @@ jobs:
 #           # The remote repository that publishing source for GitHub Pages site, defaults to current repo and is formatted like 'user/repo-name'
 #           # The personal access token that authorize repo access
 #           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
-      - name: Github Pages Custom Deploy
-        # You may pin to the exact commit or the version.
-        # uses: sterlingwes/gh-pages-deploy-action@8b237b6c575f341cd5c28660337a21869e222f62
-        uses: sterlingwes/gh-pages-deploy-action@v1.1
+      - name: Install and Build 🔧
+        run:
+            npm install
+            npm run-script build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          # A personal access token needed to push your site after it has been built.
-          access-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
-          # The subdirectory that your build command outputs your site assets to.
-          source-directory: Documentation
-          # The build command that should be run to generate your site.
-          build-command: python3 -m http.server
-          # The branch expected by GitHub to have the static files needed for your site.
-#           deploy-branch: main
-#           # The custom domain you want your Github Pages site to be served from.
-#           custom-domain: 
+            GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}}
+            BRANCH: main
+            FOLDER: Documentation
