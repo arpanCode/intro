@@ -23,24 +23,22 @@ jobs:
       - name: Permissions
         run: sudo chown -R $USER:$USER /home/runner/work/intro.io/intro.io
  
- #   Publish to Github Pages
-       
-#       - name: Deploy 🚀
-#         uses: JamesIves/github-pages-deploy-action@3.6.2
-#         with:
-#              GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-#              BRANCH: main
-#              FOLDER: Documentation  
-
-      - name: Deploy 🚀 GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2.2.0
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          keep_history: true
-          # Build directory to deploy
-          build_dir:  Documentation
-          jekyll: false
-        env:
-           GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}} 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Documentation
+          enable_jekyll: true
+
+#       - name: Deploy 🚀 GitHub Pages
+#         uses: crazy-max/ghaction-github-pages@v2.2.0
+#         with:
+#           keep_history: true
+#           # Build directory to deploy
+#           build_dir:  Documentation
+#           jekyll: false
+#         env:
+#            GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}} 
   
   #   Publish to Wikki
       - name: Generate Documentation
