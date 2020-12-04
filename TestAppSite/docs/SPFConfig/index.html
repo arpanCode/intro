@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPFCore - SPFConfig</title>
+    <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/">
+            <strong>
+                SPFCore
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#spfconfig.init(dispatcher:flowgraphfactory:framegraphfactory:factories:endpoint:eventlisteners:locale:country:language:)">init(dispatcher:​flow​Graph​Factory:​frame​Graph​Factory:​factories:​endpoint:​event​Listeners:​locale:​country:​language:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#spfconfig.dispatcher">dispatcher</a></li><li class="variable"><a href="#spfconfig.flowgraphfactory">flow​Graph​Factory</a></li><li class="variable"><a href="#spfconfig.framegraphfactory">frame​Graph​Factory</a></li><li class="variable"><a href="#spfconfig.factories">factories</a></li><li class="variable"><a href="#spfconfig.endpoint">endpoint</a></li><li class="variable"><a href="#spfconfig.eventlisteners">event​Listeners</a></li><li class="variable"><a href="#spfconfig.locale">locale</a></li><li class="variable"><a href="#spfconfig.country">country</a></li><li class="variable"><a href="#spfconfig.language">language</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Structure</small>
+    <code class="name">SPFConfig</code>
+</h1>
+
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">SPFConfig</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Shared SPF Configuration</p>
+
+</div>
+
+    <section id="initializers">
+        <h2>Initializers</h2>
+
+        <div role="article" class="initializer" id="spfconfig.init(dispatcher:flowgraphfactory:framegraphfactory:factories:endpoint:eventlisteners:locale:country:language:)">
+    <h3>
+        <code>init(dispatcher:​flow​Graph​Factory:​frame​Graph​Factory:​factories:​endpoint:​event​Listeners:​locale:​country:​language:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>(<span class="variable">dispatcher</span>: <a href="/SPFOperationDispatcher"><span class="type">SPFOperationDispatcher</span></a>, <span class="variable">flowGraphFactory</span>: <a href="/SPFFlowGraphFactory"><span class="type">SPFFlowGraphFactory</span></a>, <span class="variable">frameGraphFactory</span>: <a href="/SPFFrameGraphFactory"><span class="type">SPFFrameGraphFactory</span></a>, <span class="variable">factories</span>: [<a href="/SPFOperationScopeRegistryRecord"><span class="type">SPFOperationScopeRegistryRecord</span></a>], <span class="variable">endpoint</span>: <span class="type">String</span>, <span class="variable">eventListeners</span>: [<a href="/SPFEventListener"><span class="type">SPFEventListener</span></a>], <span class="variable">locale</span>: <span class="type">String</span>, <span class="variable">country</span>: <span class="type">String</span>, <span class="variable">language</span>: <span class="type">String</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Default initializer (please consider using SPFConfigBuilder instead)</p>
+
+</div>
+</div>
+    </section>
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="spfconfig.dispatcher">
+    <h3>
+        <code>dispatcher</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">dispatcher</span>: <a href="/SPFOperationDispatcher"><span class="type">SPFOperationDispatcher</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Operation dispatcher</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfig.flowgraphfactory">
+    <h3>
+        <code>flow​Graph​Factory</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">flowGraphFactory</span>: <a href="/SPFFlowGraphFactory"><span class="type">SPFFlowGraphFactory</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Flow graph factory</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfig.framegraphfactory">
+    <h3>
+        <code>frame​Graph​Factory</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">frameGraphFactory</span>: <a href="/SPFFrameGraphFactory"><span class="type">SPFFrameGraphFactory</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Frame graph factory</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfig.factories">
+    <h3>
+        <code>factories</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">factories</span>: [<a href="/SPFOperationScopeRegistryRecord"><span class="type">SPFOperationScopeRegistryRecord</span></a>]</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>List of registered factories and executors</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfig.endpoint">
+    <h3>
+        <code>endpoint</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">endpoint</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Base URL (for remote operations)</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfig.eventlisteners">
+    <h3>
+        <code>event​Listeners</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">eventListeners</span>: [<a href="/SPFEventListener"><span class="type">SPFEventListener</span></a>]</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>List of registered event listeners</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfig.locale">
+    <h3>
+        <code>locale</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">locale</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Resolved app locale</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfig.country">
+    <h3>
+        <code>country</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">country</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Country (device country or user account country)</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfig.language">
+    <h3>
+        <code>language</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">language</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Language (device language or account language)</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2020-12-03T12:05:43+0530">3 December 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+</p>
+    </footer>
+</body>
+</html>

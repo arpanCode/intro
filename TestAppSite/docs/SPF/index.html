@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPFCore - SPF</title>
+    <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/">
+            <strong>
+                SPFCore
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#spf.rootscopeid">root​Scope​Id</a></li><li class="variable"><a href="#spf.shared">shared</a></li><li class="variable"><a href="#spf.isinitialized">is​Initialized</a></li><li class="variable"><a href="#spf.flowgraphfactory">flow​Graph​Factory</a></li><li class="variable"><a href="#spf.framegraphfactory">frame​Graph​Factory</a></li><li class="variable"><a href="#spf.executionscope">execution​Scope</a></li><li class="variable"><a href="#spf.dispatcher">dispatcher</a></li><li class="variable"><a href="#spf.currentflowid">current​Flow​Id</a></li><li class="variable"><a href="#spf.currentframeid">current​Frame​Id</a></li><li class="variable"><a href="#spf.eventbus">event​Bus</a></li><li class="variable"><a href="#spf.logicalversion">logical​Version</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#spf.initialize(application:config:)">initialize(application:​config:​)</a></li><li class="function"><a href="#spf.registerexecutor(operationclass:executionfactory:scopeclass:)">register​Executor(operation​Class:​execution​Factory:​scope​Class:​)</a></li><li class="function"><a href="#spf.deregisterexecutor(operationclass:scope:)">deregister​Executor(operation​Class:​scope:​)</a></li><li class="function"><a href="#spf.loadandopenflow(flowid:endpoint:flowconfig:)">load​And​Open​Flow(flow​Id:​endpoint:​flow​Config:​)</a></li><li class="function"><a href="#spf.loadandopenflow(flowid:endpoint:flowparams:presentationstyle:parent:completion:failure:render:networkparams:)">load​And​Open​Flow(flow​Id:​endpoint:​flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​network​Params:​)</a></li><li class="function"><a href="#spf.loadandopenflow(flowid:endpoint:flowparams:presentationstyle:parent:completion:failure:render:)">load​And​Open​Flow(flow​Id:​endpoint:​flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​)</a></li><li class="function"><a href="#spf.openflow(path:flowconfig:)">open​Flow(path:​flow​Config:​)</a></li><li class="function"><a href="#spf.openflow(path:flowparams:presentationstyle:parent:completion:failure:render:networkparams:)">open​Flow(path:​flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​network​Params:​)</a></li><li class="function"><a href="#spf.openflow(payload:flowconfig:)">open​Flow(payload:​flow​Config:​)</a></li><li class="function"><a href="#spf.openflow(payload:flowparams:presentationstyle:parent:completion:failure:render:networkparams:)">open​Flow(payload:​flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​network​Params:​)</a></li><li class="function"><a href="#spf.updatelocale(_:country:language:)">update​Locale(_:​country:​language:​)</a></li><li class="function"><a href="#spf.register(eventlistener:)">register(event​Listener:​)</a></li><li class="function"><a href="#spf.unregister(eventlistener:)">unregister(event​Listener:​)</a></li><li class="function"><a href="#spf.dispose()">dispose()</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Class</small>
+    <code class="name">SPF</code>
+</h1>
+
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="attribute">final</span> <span class="keyword">class</span> <span class="type">SPF</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>SPF Instance</p>
+
+</div>
+
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="spf.rootscopeid">
+    <h3>
+        <code>root​Scope​Id</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">rootScopeId</span> = <span class="string literal">"</span><span class="string literal">/root</span><span class="string literal">"</span></code></pre></body></html>
+</div>
+<div role="article" class="variable" id="spf.shared">
+    <h3>
+        <code>shared</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">shared</span>: <a href="/SPF"><span class="type">SPF</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Shared instance (singleton)</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.isinitialized">
+    <h3>
+        <code>is​Initialized</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">isInitialized</span>: <span class="type">Bool</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>This property turns to <code>true</code> after calling</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.flowgraphfactory">
+    <h3>
+        <code>flow​Graph​Factory</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">flowGraphFactory</span>: <a href="/SPFFlowGraphFactory"><span class="type">SPFFlowGraphFactory</span></a>!</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Flow graph factory</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.framegraphfactory">
+    <h3>
+        <code>frame​Graph​Factory</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">frameGraphFactory</span>: <a href="/SPFFrameGraphFactory"><span class="type">SPFFrameGraphFactory</span></a>!</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Frame graph factory</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.executionscope">
+    <h3>
+        <code>execution​Scope</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">executionScope</span>: <a href="/SPFAppExecutionScope"><span class="type">SPFAppExecutionScope</span></a>!</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Execution scope</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.dispatcher">
+    <h3>
+        <code>dispatcher</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">dispatcher</span>: <a href="/SPFOperationDispatcher"><span class="type">SPFOperationDispatcher</span></a>!</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Operation dispatcher</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.currentflowid">
+    <h3>
+        <code>current​Flow​Id</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">currentFlowId</span>: <span class="type">String</span>!</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Current flow id</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.currentframeid">
+    <h3>
+        <code>current​Frame​Id</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">currentFrameId</span>: <span class="type">String</span>!</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Current frame id</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.eventbus">
+    <h3>
+        <code>event​Bus</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">eventBus</span>: <a href="/SPFEventBus"><span class="type">SPFEventBus</span></a>!</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Event bus</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spf.logicalversion">
+    <h3>
+        <code>logical​Version</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">logicalVersion</span>: <span class="type">String</span>!</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Logical version of SPF framework(s).
+Backend should always refer to <code>logicalVersion</code> for compatibility checks.</p>
+
+</div>
+</div>
+    </section>
+    <section id="methods">
+        <h2>Methods</h2>
+
+        <div role="article" class="function" id="spf.initialize(application:config:)">
+    <h3>
+        <code>initialize(application:​config:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">initialize</span>(<span class="variable">application</span>: <span class="type">UIApplication</span>? = <span class="keyword">nil</span>, <span class="variable">config</span>: <a href="/SPFConfig"><span class="type">SPFConfig</span></a> = <span class="variable">SPFConfigBuilder</span>.<span class="type">defaultBuilder</span>().<span class="type">build</span>()) <span class="keyword">throws</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Initialize SPF singleton</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>application</th>
+    <td><code class="type">UIApplication?</code></td>
+    <td><p>Host application (optional). Not required if used in app extension (app scope operations won't be available).</p>
+</td>
+</tr>
+<tr>
+    <th>config</th>
+    <td><code class="type">SPFConfig</code></td>
+    <td><p>SPF configuration (optional).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+  <h4>Throws</h4>
+  <p><code>SPFError</code> if malformed configuration was provided.</p>
+
+</div>
+<div role="article" class="function" id="spf.registerexecutor(operationclass:executionfactory:scopeclass:)">
+    <h3>
+        <code>register​Executor(operation​Class:​execution​Factory:​scope​Class:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">registerExecutor</span>(<span class="variable">operationClass</span>: <a href="/SPFOperation"><span class="type">SPFOperation</span></a>.<span class="type">Type</span>, <span class="variable">executionFactory</span>: <a href="/SPFOperationExecutorFactory"><span class="type">SPFOperationExecutorFactory</span></a>.<span class="type">Type</span>, <span class="variable">scopeClass</span>: <a href="/SPFExecutionScope"><span class="type">SPFExecutionScope</span></a>.<span class="type">Type</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Register executor to SPFOperationExecutorRegistry which will be available only in SPFAppExecutionScope</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>operation​Class</th>
+    <td><code class="type">SPFOperation.​Type</code></td>
+    <td><p>SPFOperation</p>
+</td>
+</tr>
+<tr>
+    <th>execution​Factory</th>
+    <td><code class="type">SPFOperation​Executor​Factory.​Type</code></td>
+    <td><p>SPFOperationExecutorFactory</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.deregisterexecutor(operationclass:scope:)">
+    <h3>
+        <code>deregister​Executor(operation​Class:​scope:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">deregisterExecutor</span>(<span class="variable">operationClass</span>: <a href="/SPFOperation"><span class="type">SPFOperation</span></a>.<span class="type">Type</span>, <span class="variable">scope</span>: <a href="/SPFExecutionScope"><span class="type">SPFExecutionScope</span></a>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Deregister Executor from SPFOperationExecutorRegistry.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>operation​Class</th>
+    <td><code class="type">SPFOperation.​Type</code></td>
+    <td><p>SPFOperation</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.loadandopenflow(flowid:endpoint:flowconfig:)">
+    <h3>
+        <code>load​And​Open​Flow(flow​Id:​endpoint:​flow​Config:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">loadAndOpenFlow</span>(<span class="variable">flowId</span>: <span class="type">String</span>, <span class="variable">endpoint</span>: <span class="type">String</span>? = <span class="keyword">nil</span>, <span class="variable">flowConfig</span>: <a href="/SPFFlowConfig"><span class="type">SPFFlowConfig</span></a>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Load and launch a remote SPF flow.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>flow​Id</th>
+    <td><code class="type">String</code></td>
+    <td><p>Flow identifier (required).</p>
+</td>
+</tr>
+<tr>
+    <th>endpoint</th>
+    <td><code class="type">String?</code></td>
+    <td><p>Search flow endpoint (optional). If not specified - the default one (passed during SPF initialization) will be used.</p>
+</td>
+</tr>
+<tr>
+    <th>flow​Config</th>
+    <td><code class="type">SPFFlow​Config</code></td>
+    <td><p>Flow configuration (required).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.loadandopenflow(flowid:endpoint:flowparams:presentationstyle:parent:completion:failure:render:networkparams:)">
+    <h3>
+        <code>load​And​Open​Flow(flow​Id:​endpoint:​flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​network​Params:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="attribute">@</span><span class="attribute">available</span>(*, <span class="variable">deprecated</span>, <span class="variable">message</span>: <span class="string literal">"Use loadAndOpenFlow:flowId:endpoint:flowConfig instead"</span>) <span class="keyword">public</span> <span class="keyword">func</span> <span class="function">loadAndOpenFlow</span>(<span class="variable">flowId</span>: <span class="type">String</span>, <span class="variable">endpoint</span>: <span class="type">String</span>? = <span class="keyword">nil</span>, <span class="variable">flowParams</span>: [<span class="type">String</span> : <span class="type">String</span>]? = <span class="keyword">nil</span>, <span class="variable">presentationStyle</span>: <a href="/SPFPresentationStyle"><span class="type">SPFPresentationStyle</span></a> = .<span class="variable">modalFullScreen</span>, <span class="variable">parent</span>: <span class="type">UIViewController</span>? = <span class="keyword">nil</span>, <span class="variable">completion</span>: ((<a href="/SPFFlowCompleteResult"><span class="type">SPFFlowCompleteResult</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">failure</span>: ((<a href="/SPFError"><span class="type">SPFError</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">render</span>: ((<a href="/SPFNavigationController"><span class="type">SPFNavigationController</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">networkParams</span>: ((<a href="/SPFRemoteOperation"><span class="type">SPFRemoteOperation</span></a>) -&gt; [<span class="type">String</span>: <span class="keyword">Any</span>])? = <span class="keyword">nil</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Load and launch a remote SPF flow.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>flow​Id</th>
+    <td><code class="type">String</code></td>
+    <td><p>Flow identifier (required).</p>
+</td>
+</tr>
+<tr>
+    <th>endpoint</th>
+    <td><code class="type">String?</code></td>
+    <td><p>Search flow endpoint (optional). If not specified - the default one (passed during SPF initialization) will be used.</p>
+</td>
+</tr>
+<tr>
+    <th>flow​Params</th>
+    <td><code class="type">[String :​ String]?</code></td>
+    <td><p>Flow parameters (optional). Make sure to pass flow parameters in case if your flow has DPH (dynamic placeholders).</p>
+</td>
+</tr>
+<tr>
+    <th>presentation​Style</th>
+    <td><code class="type">SPFPresentation​Style</code></td>
+    <td><p>Prefered presentation style (optional). If not specified - <code>modalFullScreen</code> will be used by default.</p>
+</td>
+</tr>
+<tr>
+    <th>parent</th>
+    <td><code class="type">UIView​Controller?</code></td>
+    <td><p>Parent view controller (optional). If not specified - only <code>none</code> presentation style is supported.</p>
+</td>
+</tr>
+<tr>
+    <th>completion</th>
+    <td><code class="type">((SPFFlow​Complete​Result) -&gt; Void)?</code></td>
+    <td><p>Callback for normal flow completion (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>render</th>
+    <td><code class="type">((SPFNavigation​Controller) -&gt; Void)?</code></td>
+    <td><p>Callback for rendered SPF Flow (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>failure</th>
+    <td><code class="type">((SPFError) -&gt; Void)?</code></td>
+    <td><p>Callback for abnormal flow completion (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>network​Params</th>
+    <td><code class="type">((SPFRemote​Operation) -&gt; [String:​ Any])?</code></td>
+    <td><p>Hook to inject additional parameters to remote operation (optional).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.loadandopenflow(flowid:endpoint:flowparams:presentationstyle:parent:completion:failure:render:)">
+    <h3>
+        <code>load​And​Open​Flow(flow​Id:​endpoint:​flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="attribute">@</span><span class="attribute">available</span>(*, <span class="variable">deprecated</span>, <span class="variable">message</span>: <span class="string literal">"Use loadAndOpenFlow:flowId:endpoint:flowConfig instead"</span>) <span class="keyword">public</span> <span class="keyword">func</span> <span class="function">loadAndOpenFlow</span>(<span class="variable">flowId</span>: <span class="type">String</span>, <span class="variable">endpoint</span>: <span class="type">String</span>? = <span class="keyword">nil</span>, <span class="variable">flowParams</span>: [<span class="type">String</span> : <span class="type">String</span>]? = <span class="keyword">nil</span>, <span class="variable">presentationStyle</span>: <a href="/SPFPresentationStyle"><span class="type">SPFPresentationStyle</span></a> = .<span class="variable">modalFullScreen</span>, <span class="variable">parent</span>: <span class="type">UIViewController</span>? = <span class="keyword">nil</span>, <span class="variable">completion</span>: ((<a href="/SPFFlowCompleteResult"><span class="type">SPFFlowCompleteResult</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">failure</span>: ((<a href="/SPFError"><span class="type">SPFError</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">render</span>: ((<a href="/SPFNavigationController"><span class="type">SPFNavigationController</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Load and launch a remote SPF flow.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>flow​Id</th>
+    <td><code class="type">String</code></td>
+    <td><p>Flow identifier (required).</p>
+</td>
+</tr>
+<tr>
+    <th>endpoint</th>
+    <td><code class="type">String?</code></td>
+    <td><p>Search flow endpoint (optional). If not specified - the default one (passed during SPF initialization) will be used.</p>
+</td>
+</tr>
+<tr>
+    <th>flow​Params</th>
+    <td><code class="type">[String :​ String]?</code></td>
+    <td><p>Flow parameters (optional). Make sure to pass flow parameters in case if your flow has DPH (dynamic placeholders).</p>
+</td>
+</tr>
+<tr>
+    <th>presentation​Style</th>
+    <td><code class="type">SPFPresentation​Style</code></td>
+    <td><p>Prefered presentation style (optional). If not specified - <code>modalFullScreen</code> will be used by default.</p>
+</td>
+</tr>
+<tr>
+    <th>parent</th>
+    <td><code class="type">UIView​Controller?</code></td>
+    <td><p>Parent view controller (optional). If not specified - only <code>none</code> presentation style is supported.</p>
+</td>
+</tr>
+<tr>
+    <th>completion</th>
+    <td><code class="type">((SPFFlow​Complete​Result) -&gt; Void)?</code></td>
+    <td><p>Callback for normal flow completion (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>render</th>
+    <td><code class="type">((SPFNavigation​Controller) -&gt; Void)?</code></td>
+    <td><p>Callback for rendered SPF Flow (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>failure</th>
+    <td><code class="type">((SPFError) -&gt; Void)?</code></td>
+    <td><p>Callback for abnormal flow completion (optional).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.openflow(path:flowconfig:)">
+    <h3>
+        <code>open​Flow(path:​flow​Config:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">openFlow</span>(<span class="variable">path</span>: <span class="type">String</span>, <span class="variable">flowConfig</span>: <a href="/SPFFlowConfig"><span class="type">SPFFlowConfig</span></a>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Load and launch a local SPF flow.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>path</th>
+    <td><code class="type">String</code></td>
+    <td><p>Path to local flow payload (required).</p>
+</td>
+</tr>
+<tr>
+    <th>flow​Config</th>
+    <td><code class="type">SPFFlow​Config</code></td>
+    <td><p>Flow configuration (required).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.openflow(path:flowparams:presentationstyle:parent:completion:failure:render:networkparams:)">
+    <h3>
+        <code>open​Flow(path:​flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​network​Params:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">openFlow</span>(<span class="variable">path</span>: <span class="type">String</span>, <span class="variable">flowParams</span>: [<span class="type">String</span> : <span class="type">String</span>]? = <span class="keyword">nil</span>, <span class="variable">presentationStyle</span>: <a href="/SPFPresentationStyle"><span class="type">SPFPresentationStyle</span></a> = .<span class="variable">modalFullScreen</span>, <span class="variable">parent</span>: <span class="type">UIViewController</span>? = <span class="keyword">nil</span>, <span class="variable">completion</span>: ((<a href="/SPFFlowCompleteResult"><span class="type">SPFFlowCompleteResult</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">failure</span>: ((<a href="/SPFError"><span class="type">SPFError</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">render</span>: ((<a href="/SPFNavigationController"><span class="type">SPFNavigationController</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">networkParams</span>: ((<a href="/SPFRemoteOperation"><span class="type">SPFRemoteOperation</span></a>) -&gt; [<span class="type">String</span>: <span class="keyword">Any</span>])? = <span class="keyword">nil</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Load and launch a local SPF flow.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>path</th>
+    <td><code class="type">String</code></td>
+    <td><p>Path to local flow payload (required).</p>
+</td>
+</tr>
+<tr>
+    <th>flow​Params</th>
+    <td><code class="type">[String :​ String]?</code></td>
+    <td><p>Flow parameters (optional). Make sure to pass flow parameters in case if your flow has DPH (dynamic placeholders).</p>
+</td>
+</tr>
+<tr>
+    <th>presentation​Style</th>
+    <td><code class="type">SPFPresentation​Style</code></td>
+    <td><p>Prefered presentation style (optional). If not specified - <code>modalFullScreen</code> will be used by default.</p>
+</td>
+</tr>
+<tr>
+    <th>parent</th>
+    <td><code class="type">UIView​Controller?</code></td>
+    <td><p>Parent view controller (optional). If not specified - only <code>none</code> presentation style is supported.</p>
+</td>
+</tr>
+<tr>
+    <th>completion</th>
+    <td><code class="type">((SPFFlow​Complete​Result) -&gt; Void)?</code></td>
+    <td><p>Callback for normal flow completion (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>render</th>
+    <td><code class="type">((SPFNavigation​Controller) -&gt; Void)?</code></td>
+    <td><p>Callback for rendered SPF Flow (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>failure</th>
+    <td><code class="type">((SPFError) -&gt; Void)?</code></td>
+    <td><p>Callback for abnormal flow completion (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>network​Params</th>
+    <td><code class="type">((SPFRemote​Operation) -&gt; [String:​ Any])?</code></td>
+    <td><p>Hook to inject additional parameters to remote operation (optional).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.openflow(payload:flowconfig:)">
+    <h3>
+        <code>open​Flow(payload:​flow​Config:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">openFlow</span>(<span class="variable">payload</span>: <span class="type">String</span>, <span class="variable">flowConfig</span>: <a href="/SPFFlowConfig"><span class="type">SPFFlowConfig</span></a>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Load and launch SPF flow from payload.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>payload</th>
+    <td><code class="type">String</code></td>
+    <td><p>JSON payload representing SPF flow.</p>
+</td>
+</tr>
+<tr>
+    <th>flow​Config</th>
+    <td><code class="type">SPFFlow​Config</code></td>
+    <td><p>Flow configuration (required).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.openflow(payload:flowparams:presentationstyle:parent:completion:failure:render:networkparams:)">
+    <h3>
+        <code>open​Flow(payload:​flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​network​Params:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">openFlow</span>(<span class="variable">payload</span>: <span class="type">String</span>, <span class="variable">flowParams</span>: [<span class="type">String</span> : <span class="type">String</span>]? = <span class="keyword">nil</span>, <span class="variable">presentationStyle</span>: <a href="/SPFPresentationStyle"><span class="type">SPFPresentationStyle</span></a> = .<span class="variable">modalFullScreen</span>, <span class="variable">parent</span>: <span class="type">UIViewController</span>? = <span class="keyword">nil</span>, <span class="variable">completion</span>: ((<a href="/SPFFlowCompleteResult"><span class="type">SPFFlowCompleteResult</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">failure</span>: ((<a href="/SPFError"><span class="type">SPFError</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">render</span>: ((<a href="/SPFNavigationController"><span class="type">SPFNavigationController</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">networkParams</span>: ((<a href="/SPFRemoteOperation"><span class="type">SPFRemoteOperation</span></a>) -&gt; [<span class="type">String</span>: <span class="keyword">Any</span>])? = <span class="keyword">nil</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Load and launch SPF flow from payload.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>payload</th>
+    <td><code class="type">String</code></td>
+    <td><p>JSON payload representing SPF flow.</p>
+</td>
+</tr>
+<tr>
+    <th>flow​Params</th>
+    <td><code class="type">[String :​ String]?</code></td>
+    <td><p>Optional flow parameters. Make sure to pass flow parameters in case if your flow has DPH (dynamic placeholders).</p>
+</td>
+</tr>
+<tr>
+    <th>presentation​Style</th>
+    <td><code class="type">SPFPresentation​Style</code></td>
+    <td><p>Prefered presentation style.</p>
+</td>
+</tr>
+<tr>
+    <th>parent</th>
+    <td><code class="type">UIView​Controller?</code></td>
+    <td><p>Parent view controller.</p>
+</td>
+</tr>
+<tr>
+    <th>completion</th>
+    <td><code class="type">((SPFFlow​Complete​Result) -&gt; Void)?</code></td>
+    <td><p>Callback for normal flow completion.</p>
+</td>
+</tr>
+<tr>
+    <th>render</th>
+    <td><code class="type">((SPFNavigation​Controller) -&gt; Void)?</code></td>
+    <td><p>Callback for rendered SPF Flow (might be used if presentationStyle is none).</p>
+</td>
+</tr>
+<tr>
+    <th>failure</th>
+    <td><code class="type">((SPFError) -&gt; Void)?</code></td>
+    <td><p>Callback for abnormal flow completion.</p>
+</td>
+</tr>
+<tr>
+    <th>network​Params</th>
+    <td><code class="type">((SPFRemote​Operation) -&gt; [String:​ Any])?</code></td>
+    <td><p>Hook to inject additional parameters to remote operation (optional).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.updatelocale(_:country:language:)">
+    <h3>
+        <code>update​Locale(_:​country:​language:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">updateLocale</span>(<span class="keyword">_</span> <span class="variable">locale</span>: <span class="type">String</span>? = <span class="keyword">nil</span>, <span class="variable">country</span>: <span class="type">String</span>? = <span class="keyword">nil</span>, <span class="variable">language</span>: <span class="type">String</span>? = <span class="keyword">nil</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Update locale, country and language (country/region settings could be changed after SPF was initialized).</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>locale</th>
+    <td><code class="type">String?</code></td>
+    <td><p>Resolved app locale (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>country</th>
+    <td><code class="type">String?</code></td>
+    <td><p>Country: device country or user account country (optional).</p>
+</td>
+</tr>
+<tr>
+    <th>language</th>
+    <td><code class="type">String?</code></td>
+    <td><p>Language: device language or account language (optional).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.register(eventlistener:)">
+    <h3>
+        <code>register(event​Listener:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">register</span>(<span class="variable">eventListener</span>: <a href="/SPFEventListener"><span class="type">SPFEventListener</span></a>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Register SPF event listener.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>event​Listener</th>
+    <td><code class="type">SPFEvent​Listener</code></td>
+    <td><p>SPF event listener (required).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.unregister(eventlistener:)">
+    <h3>
+        <code>unregister(event​Listener:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">unregister</span>(<span class="variable">eventListener</span>: <a href="/SPFEventListener"><span class="type">SPFEventListener</span></a>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Unregister SPF event listener.</p>
+
+</div>
+<h4>Parameters</h4>
+
+<table class="parameters">
+  <thead hidden>
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <th>event​Listener</th>
+    <td><code class="type">SPFEvent​Listener</code></td>
+    <td><p>SPF event listener (required).</p>
+</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<div role="article" class="function" id="spf.dispose()">
+    <h3>
+        <code>dispose()</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">dispose</span>()</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Dispose SPF resources</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2020-12-03T12:05:40+0530">3 December 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+</p>
+    </footer>
+</body>
+</html>

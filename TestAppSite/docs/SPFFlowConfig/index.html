@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPFCore - SPFFlowConfig</title>
+    <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/">
+            <strong>
+                SPFCore
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#spfflowconfig.init(flowparams:presentationstyle:parent:completion:failure:render:)">init(flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#spfflowconfig.networkparams">network​Params</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Structure</small>
+    <code class="name">SPFFlow​Config</code>
+</h1>
+
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">SPFFlowConfig</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>SPF Flow Configuration</p>
+
+</div>
+
+    <section id="initializers">
+        <h2>Initializers</h2>
+
+        <div role="article" class="initializer" id="spfflowconfig.init(flowparams:presentationstyle:parent:completion:failure:render:)">
+    <h3>
+        <code>init(flow​Params:​presentation​Style:​parent:​completion:​failure:​render:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>(<span class="variable">flowParams</span>: [<span class="type">String</span> : <span class="type">String</span>]? = <span class="keyword">nil</span>, <span class="variable">presentationStyle</span>: <a href="/SPFPresentationStyle"><span class="type">SPFPresentationStyle</span></a> = .<span class="variable">modalFullScreen</span>, <span class="variable">parent</span>: <span class="type">UIViewController</span>? = <span class="keyword">nil</span>, <span class="variable">completion</span>: ((<a href="/SPFFlowCompleteResult"><span class="type">SPFFlowCompleteResult</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">failure</span>: ((<a href="/SPFError"><span class="type">SPFError</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>, <span class="variable">render</span>: ((<a href="/SPFNavigationController"><span class="type">SPFNavigationController</span></a>) -&gt; <span class="type">Void</span>)? = <span class="keyword">nil</span>)</code></pre></body></html>
+</div>
+    </section>
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="spfflowconfig.networkparams">
+    <h3>
+        <code>network​Params</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">networkParams</span>: ((<a href="/SPFRemoteOperation"><span class="type">SPFRemoteOperation</span></a>) -&gt; [<span class="type">String</span>: <span class="keyword">Any</span>])?</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Get additional parameters for remote operation</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2020-12-03T12:05:43+0530">3 December 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+</p>
+    </footer>
+</body>
+</html>

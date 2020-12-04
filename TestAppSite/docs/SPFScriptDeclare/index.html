@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPFCore - SPFScriptDeclare</title>
+    <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/">
+            <strong>
+                SPFCore
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#spfscriptdeclare.declareproxyscript">declare​Proxy​Script</a></li><li class="variable"><a href="#spfscriptdeclare.declareevalincontextscript">declare​Eval​InContext​Script</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#spfscriptdeclare.declarevariable(variablename:defaultvalue:)">declare​Variable(variable​Name:​default​Value:​)</a></li><li class="function"><a href="#spfscriptdeclare.setvalueforvariable(variablename:value:)">set​Value​For​Variable(variable​Name:​value:​)</a></li><li class="function"><a href="#spfscriptdeclare.declareflowcontextscript(flowid:data:)">declare​Flow​Context​Script(flow​Id:​data:​)</a></li><li class="function"><a href="#spfscriptdeclare.declareflowparamsscript(data:)">declare​Flow​Params​Script(data:​)</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Structure</small>
+    <code class="name">SPFScript​Declare</code>
+</h1>
+
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">SPFScriptDeclare</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Script declaration helper</p>
+
+</div>
+
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="spfscriptdeclare.declareproxyscript">
+    <h3>
+        <code>declare​Proxy​Script</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">declareProxyScript</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Static declare proxy script</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfscriptdeclare.declareevalincontextscript">
+    <h3>
+        <code>declare​Eval​InContext​Script</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">declareEvalInContextScript</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Static script to declare the evaluation</p>
+
+</div>
+</div>
+    </section>
+    <section id="methods">
+        <h2>Methods</h2>
+
+        <div role="article" class="function" id="spfscriptdeclare.declarevariable(variablename:defaultvalue:)">
+    <h3>
+        <code>declare​Variable(variable​Name:​default​Value:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">func</span> <span class="function">declareVariable</span>(<span class="variable">variableName</span>: <span class="type">String</span>, <span class="variable">defaultValue</span>: <span class="type">String</span>) -&gt; <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Static script to declare variable with default value  in flow context</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfscriptdeclare.setvalueforvariable(variablename:value:)">
+    <h3>
+        <code>set​Value​For​Variable(variable​Name:​value:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">func</span> <span class="function">setValueForVariable</span>(<span class="variable">variableName</span>: <span class="type">String</span>, <span class="variable">value</span>: <span class="type">String</span>) -&gt; <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Static script to set value to a variable in flow context</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfscriptdeclare.declareflowcontextscript(flowid:data:)">
+    <h3>
+        <code>declare​Flow​Context​Script(flow​Id:​data:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">func</span> <span class="function">declareFlowContextScript</span>(<span class="variable">flowId</span>: <span class="type">String</span>, <span class="variable">data</span>: [<span class="type">String</span> : <span class="keyword">Any</span>]) -&gt; <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Static script to declare flow context</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfscriptdeclare.declareflowparamsscript(data:)">
+    <h3>
+        <code>declare​Flow​Params​Script(data:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">func</span> <span class="function">declareFlowParamsScript</span>(<span class="variable">data</span>: [<span class="type">String</span> : <span class="type">String</span>]) -&gt; <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Static script to declare flow parameters</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2020-12-03T12:05:40+0530">3 December 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+</p>
+    </footer>
+</body>
+</html>

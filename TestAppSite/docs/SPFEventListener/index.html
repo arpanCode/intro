@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPFCore - SPFEventListener</title>
+    <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/">
+            <strong>
+                SPFCore
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#requirements">Requirements</a><ul><li class="variable"><a href="#spfeventlistener.name">name</a></li><li class="function"><a href="#spfeventlistener.on(_:)">on(_:​)</a></li><li class="function"><a href="#spfeventlistener.onsubscribed(_:)">on​Subscribed(_:​)</a></li><li class="function"><a href="#spfeventlistener.onunsubscribed(_:)">on​Unsubscribed(_:​)</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Protocol</small>
+    <code class="name">SPFEvent​Listener</code>
+</h1>
+
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">protocol</span> <span class="type">SPFEventListener</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>SPF event listener protocol</p>
+
+</div>
+
+
+
+
+    <section id="requirements">
+        <h2>Requirements</h2>
+
+        <div role="article" class="variable" id="spfeventlistener.name">
+    <h3>
+        <code>name</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">name</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Listener name</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfeventlistener.on(_:)">
+    <h3>
+        <code>on(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">func</span> <span class="function">on</span>(<span class="keyword">_</span> <span class="variable">event</span>: <a href="/SPFEvent"><span class="type">SPFEvent</span></a>) -&gt; <span class="type">Bool</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Handle SPF event
+Returns <code>true</code> if we should propagade this event to other listeners
+Returns <code>false</code> if we should mark current event as handled, and should not propagade it further</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfeventlistener.onsubscribed(_:)">
+    <h3>
+        <code>on​Subscribed(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">func</span> <span class="function">onSubscribed</span>(<span class="keyword">_</span> <span class="variable">eventBus</span>: <a href="/SPFEventBus"><span class="type">SPFEventBus</span></a>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>&quot;Subscribed to SPF event bus&quot; event handler</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfeventlistener.onunsubscribed(_:)">
+    <h3>
+        <code>on​Unsubscribed(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">func</span> <span class="function">onUnsubscribed</span>(<span class="keyword">_</span> <span class="variable">eventBus</span>: <a href="/SPFEventBus"><span class="type">SPFEventBus</span></a>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>&quot;Unsubscribed from SPF event bus&quot; event handler</p>
+
+</div>
+</div>
+    </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2020-12-03T12:05:40+0530">3 December 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+</p>
+    </footer>
+</body>
+</html>

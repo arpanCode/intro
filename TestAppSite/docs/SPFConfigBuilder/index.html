@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPFCore - SPFConfigBuilder</title>
+    <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/">
+            <strong>
+                SPFCore
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#spfconfigbuilder.locale">locale</a></li><li class="variable"><a href="#spfconfigbuilder.country">country</a></li><li class="variable"><a href="#spfconfigbuilder.language">language</a></li></ul></li><li><a href="#methods">Methods</a><ul><li class="function"><a href="#spfconfigbuilder.setdispatcher(_:)">set​Dispatcher(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.setflowgraphfactory(_:)">set​Flow​Graph​Factory(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.setframegraphfactory(_:)">set​Frame​Graph​Factory(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.setendpoint(_:)">set​Endpoint(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.setfactories(_:)">set​Factories(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.registerappexecutor(operationclass:executionfactory:)">register​App​Executor(operation​Class:​execution​Factory:​)</a></li><li class="function"><a href="#spfconfigbuilder.registerflowexecutor(operationclass:executionfactory:)">register​Flow​Executor(operation​Class:​execution​Factory:​)</a></li><li class="function"><a href="#spfconfigbuilder.registerframeexecutor(operationclass:executionfactory:)">register​Frame​Executor(operation​Class:​execution​Factory:​)</a></li><li class="function"><a href="#spfconfigbuilder.registervalueparser(parserclass:for:)">register​Value​Parser(parser​Class:​for:​)</a></li><li class="function"><a href="#spfconfigbuilder.registereventlistener(_:)">register​Event​Listener(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.setlocale(_:)">set​Locale(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.setcountrycode(_:)">set​Country​Code(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.setlanguage(_:)">set​Language(_:​)</a></li><li class="function"><a href="#spfconfigbuilder.build()">build()</a></li><li class="function"><a href="#spfconfigbuilder.defaultbuilder()">default​Builder()</a></li><li class="function"><a href="#spfconfigbuilder.registerpaypaluicomponents()">register​Pay​Pal​UIComponents()</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Class</small>
+    <code class="name">SPFConfig​Builder</code>
+</h1>
+
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="type">SPFConfigBuilder</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>SPF Configuration Builder</p>
+
+</div>
+
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="spfconfigbuilder.locale">
+    <h3>
+        <code>locale</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">locale</span>: <span class="type">String</span>?</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Resolved app locale</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfigbuilder.country">
+    <h3>
+        <code>country</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">country</span>: <span class="type">String</span>?</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Country (device country or user account country)</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfconfigbuilder.language">
+    <h3>
+        <code>language</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">var</span> <span class="variable">language</span>: <span class="type">String</span>?</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Language (device language or account language)</p>
+
+</div>
+</div>
+    </section>
+    <section id="methods">
+        <h2>Methods</h2>
+
+        <div role="article" class="function" id="spfconfigbuilder.setdispatcher(_:)">
+    <h3>
+        <code>set​Dispatcher(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setDispatcher</span>(<span class="keyword">_</span> <span class="variable">dispatcher</span>: <a href="/SPFOperationDispatcher"><span class="type">SPFOperationDispatcher</span></a>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Set global operation dispatcher</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.setflowgraphfactory(_:)">
+    <h3>
+        <code>set​Flow​Graph​Factory(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setFlowGraphFactory</span>(<span class="keyword">_</span> <span class="variable">flowGraphFactory</span>: <a href="/SPFFlowGraphFactory"><span class="type">SPFFlowGraphFactory</span></a>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Set global flow graph factory</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.setframegraphfactory(_:)">
+    <h3>
+        <code>set​Frame​Graph​Factory(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setFrameGraphFactory</span>(<span class="keyword">_</span> <span class="variable">frameGraphFactory</span>: <a href="/SPFFrameGraphFactory"><span class="type">SPFFrameGraphFactory</span></a>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Set global frame graph factory</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.setendpoint(_:)">
+    <h3>
+        <code>set​Endpoint(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setEndpoint</span>(<span class="keyword">_</span> <span class="variable">endpoint</span>: <span class="type">String</span>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Set base URL (for remote operations)</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.setfactories(_:)">
+    <h3>
+        <code>set​Factories(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setFactories</span>(<span class="keyword">_</span> <span class="variable">factories</span>: [<a href="/SPFOperationScopeRegistryRecord"><span class="type">SPFOperationScopeRegistryRecord</span></a>]) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Append factories</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.registerappexecutor(operationclass:executionfactory:)">
+    <h3>
+        <code>register​App​Executor(operation​Class:​execution​Factory:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">registerAppExecutor</span>(<span class="variable">operationClass</span>: <a href="/SPFOperation"><span class="type">SPFOperation</span></a>.<span class="type">Type</span>, <span class="variable">executionFactory</span>: <a href="/SPFOperationExecutorFactory"><span class="type">SPFOperationExecutorFactory</span></a>.<span class="type">Type</span>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Register executor which will be available only in SPFAppExecutionScope</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.registerflowexecutor(operationclass:executionfactory:)">
+    <h3>
+        <code>register​Flow​Executor(operation​Class:​execution​Factory:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">registerFlowExecutor</span>(<span class="variable">operationClass</span>: <a href="/SPFOperation"><span class="type">SPFOperation</span></a>.<span class="type">Type</span>, <span class="variable">executionFactory</span>: <a href="/SPFOperationExecutorFactory"><span class="type">SPFOperationExecutorFactory</span></a>.<span class="type">Type</span>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Register executor which will be available only in SPFFlowExecutionScope</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.registerframeexecutor(operationclass:executionfactory:)">
+    <h3>
+        <code>register​Frame​Executor(operation​Class:​execution​Factory:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">registerFrameExecutor</span>(<span class="variable">operationClass</span>: <a href="/SPFOperation"><span class="type">SPFOperation</span></a>.<span class="type">Type</span>, <span class="variable">executionFactory</span>: <a href="/SPFOperationExecutorFactory"><span class="type">SPFOperationExecutorFactory</span></a>.<span class="type">Type</span>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Register executor which will be available only in SPFFrameExecutionScope</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.registervalueparser(parserclass:for:)">
+    <h3>
+        <code>register​Value​Parser(parser​Class:​for:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">registerValueParser</span>(<span class="variable">parserClass</span>: <a href="/SPFValueParser"><span class="type">SPFValueParser</span></a>.<span class="type">Type</span>, <span class="variable">for</span> <span class="variable">type</span>: <span class="type">String</span>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Register executor which will be available only in SPFFrameExecutionScope</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.registereventlistener(_:)">
+    <h3>
+        <code>register​Event​Listener(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">registerEventListener</span>(<span class="keyword">_</span> <span class="variable">listener</span>: <a href="/SPFEventListener"><span class="type">SPFEventListener</span></a>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Register SPF event listener</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.setlocale(_:)">
+    <h3>
+        <code>set​Locale(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setLocale</span>(<span class="keyword">_</span> <span class="variable">locale</span>: <span class="type">String</span>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Set locale</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.setcountrycode(_:)">
+    <h3>
+        <code>set​Country​Code(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setCountryCode</span>(<span class="keyword">_</span> <span class="variable">countryCode</span>: <span class="type">String</span>) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Set country</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.setlanguage(_:)">
+    <h3>
+        <code>set​Language(_:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">setLanguage</span>(<span class="keyword">_</span> <span class="variable">language</span>: <span class="type">String</span>?) -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Set language</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.build()">
+    <h3>
+        <code>build()</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">func</span> <span class="function">build</span>() -&gt; <a href="/SPFConfig"><span class="type">SPFConfig</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Build SPF configuration</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.defaultbuilder()">
+    <h3>
+        <code>default​Builder()</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="keyword">func</span> <span class="function">defaultBuilder</span>() -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Get SPF Config Builder with default parameters</p>
+
+</div>
+</div>
+<div role="article" class="function" id="spfconfigbuilder.registerpaypaluicomponents()">
+    <h3>
+        <code>register​Pay​Pal​UIComponents()</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">func</span> <span class="function">registerPayPalUIComponents</span>() -&gt; <a href="/SPFConfigBuilder"><span class="type">SPFConfigBuilder</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Register all PayPalUI components</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2020-12-03T12:05:40+0530">3 December 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+</p>
+    </footer>
+</body>
+</html>

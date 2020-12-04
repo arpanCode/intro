@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPFCore - SPFEvent</title>
+    <link rel="stylesheet" type="text/css" href="/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/">
+            <strong>
+                SPFCore
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#initializers">Initializers</a><ul><li class="initializer"><a href="#spfevent.init(flowid:frameid:eventtype:params:)">init(flow​Id:​frame​Id:​event​Type:​params:​)</a></li><li class="initializer"><a href="#spfevent.init(eventtype:params:)">init(event​Type:​params:​)</a></li></ul></li><li><a href="#properties">Properties</a><ul><li class="variable"><a href="#spfevent.flowid">flow​Id</a></li><li class="variable"><a href="#spfevent.frameid">frame​Id</a></li><li class="variable"><a href="#spfevent.eventtype">event​Type</a></li><li class="variable"><a href="#spfevent.params">params</a></li></ul></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <h1>
+    <small>Structure</small>
+    <code class="name">SPFEvent</code>
+</h1>
+
+<html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">struct</span> <span class="type">SPFEvent</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>SPF event</p>
+
+</div>
+
+    <section id="initializers">
+        <h2>Initializers</h2>
+
+        <div role="article" class="initializer" id="spfevent.init(flowid:frameid:eventtype:params:)">
+    <h3>
+        <code>init(flow​Id:​frame​Id:​event​Type:​params:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>(<span class="variable">flowId</span>: <span class="type">String</span>, <span class="variable">frameId</span>: <span class="type">String</span>, <span class="variable">eventType</span>: <a href="/SPFEventType"><span class="type">SPFEventType</span></a>, <span class="variable">params</span>: [<span class="type">String</span> : <span class="type">String</span>]? = <span class="keyword">nil</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Init SPF event with flow id, frame id, event type and optional parameters</p>
+
+</div>
+</div>
+<div role="article" class="initializer" id="spfevent.init(eventtype:params:)">
+    <h3>
+        <code>init(event​Type:​params:​)</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">public</span> <span class="keyword">init</span>(<span class="variable">eventType</span>: <a href="/SPFEventType"><span class="type">SPFEventType</span></a>, <span class="variable">params</span>: [<span class="type">String</span> : <span class="type">String</span>]? = <span class="keyword">nil</span>)</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Init SPF event with event type and optional parameters</p>
+
+</div>
+</div>
+    </section>
+    <section id="properties">
+        <h2>Properties</h2>
+
+        <div role="article" class="variable" id="spfevent.flowid">
+    <h3>
+        <code>flow​Id</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">flowId</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Current flow id</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfevent.frameid">
+    <h3>
+        <code>frame​Id</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">frameId</span>: <span class="type">String</span></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Current frame id</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfevent.eventtype">
+    <h3>
+        <code>event​Type</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">eventType</span>: <a href="/SPFEventType"><span class="type">SPFEventType</span></a></code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Type of event (click, impression, etc.)</p>
+
+</div>
+</div>
+<div role="article" class="variable" id="spfevent.params">
+    <h3>
+        <code>params</code>
+    </h3>
+    <html><body><pre class="highlight"><code><span class="keyword">let</span> <span class="variable">params</span>: [<span class="type">String</span> : <span class="type">String</span>]?</code></pre></body></html>
+<div class="summary" role="doc-abstract">
+    <p>Event parameters</p>
+
+</div>
+</div>
+    </section>
+
+
+
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2020-12-03T12:05:40+0530">3 December 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.5</span>.
+</p>
+    </footer>
+</body>
+</html>
