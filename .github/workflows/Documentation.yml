@@ -27,8 +27,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./Documentation
+          publish_dir: Documentation
           enable_jekyll: true
+          cname: arpan.io/intro
 
 #       - name: Deploy 🚀 GitHub Pages
 #         uses: crazy-max/ghaction-github-pages@v2.2.0
