@@ -1,0 +1,13 @@
+ name: Publish to GitHub Pages
+  # You may pin to the exact commit or the version.
+  # uses: tsunematsu21/actions-publish-gh-pages@c743f8c5880024a3f46adaf33114015a5f37f834
+  uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+  with:
+    # The name of the directory that containing the content to be published
+    dir: "Documentation"
+    # The name of the remote branch that publishing source for GitHub Pages site
+    branch: main
+    # The remote repository that publishing source for GitHub Pages site, defaults to current repo and is formatted like 'user/repo-name'
+    repo: # optional
+    # The personal access token that authorize repo access
+    token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
