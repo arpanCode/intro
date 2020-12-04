@@ -18,6 +18,7 @@ jobs:
           module-name: "TestAppSite"
           output: "Documentation"
           format: "html"
+          base-url: "./"
 
       - name: Permissions
         run: sudo chown -R $USER:$USER /home/runner/work/intro.io/intro.io
