@@ -30,7 +30,7 @@ jobs:
           keep_history: true
           # Build directory to deploy
           build_dir:  Documentation
-          jekyll: true
+          jekyll: false
         env:
            GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}} 
   
