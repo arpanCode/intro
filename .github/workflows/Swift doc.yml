@@ -1,6 +1,12 @@
 name: Documentation
 
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/documentation.yml
+      - TestAppSite/Sources/**.swift
 
 jobs:
   build:
@@ -11,12 +17,12 @@ jobs:
       - name: Generate Documentation
         uses: SwiftDocOrg/swift-doc@master
         with:
-          inputs: ./TestAppSite/TestAppSite
+          input: "TestAppSite/Sources"
           module-name: TestAppSite
-          output: Documentation
+          output: "Documentation"
       - name: Upload Documentation to Wiki
         uses: SwiftDocOrg/github-wiki-publish-action@v1
         with:
-          path: "Documentation"
+          path: Documentation
         env:
           GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
