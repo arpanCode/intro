@@ -20,7 +20,7 @@ jobs:
           format: "html"
         
       - name: Install Dependencies
-        run: sudo chown -R $USER /usr/local
+        run: sudo npm install
 
       - name: Deploy to GitHub Pages
         if: success()
