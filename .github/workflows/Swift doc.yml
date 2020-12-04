@@ -7,19 +7,75 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v1
       - name: Generate Documentation
         uses: SwiftDocOrg/swift-doc@master
         with:
-          inputs: "Sources"
+          inputs: "TestAppSite/Sources"
           module-name: "TestAppSite"
           output: "Documentation"
-      - name: Upload Documentation to Wiki
-        uses: SwiftDocOrg/github-wiki-publish-action@v1
+          format: "html"
+
+      - name: Permissions
+        run: sudo chown -R $USER:$USER /home/runner/work/intro.io
+          
+      - name: GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
-          path: "Documentation"
+          keep_history: true
+          # Build directory to deploy
+          build_dir:  Documentation
         env:
-          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}} 
+
+
+        
+#       - name: Deploy to GitHub Pages
+#         if: success()
+#         uses: crazy-max/ghaction-github-pages@v2
+#         with:
+#           target_branch: main
+#           build_dir: Documentation
+#         env:
+#           GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}}  
+      
+#       - name: Deploy
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#             github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+#             publish_dir: Documentation
+            
+#       Publish to Wikki
+            
+#       - name: Upload Documentation to Wiki
+#         uses: SwiftDocOrg/github-wiki-publish-action@v1
+#         with:
+#           path: "Documentation"
+#         env:
+#           GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
+          
+#       - name: Publish to GitHub Pages
+#         uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+#         with:
+#           # The name of the directory that containing the content to be published
+#           dir: Documentation
+#           # The name of the remote branch that publishing source for GitHub Pages site
+#           branch: main
+#           # The remote repository that publishing source for GitHub Pages site, defaults to current repo and is formatted like 'user/repo-name'
+#           # The personal access token that authorize repo access
+#           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
+
+#       - name: Install and Build 🔧
+#         run:
+#             npm install
+#             npm run-script build
+
+#       - name: Deploy 🚀
+#         uses: JamesIves/github-pages-deploy-action@3.6.2
+#         with:
+#             GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}}
+#             BRANCH: main
+#             FOLDER: Documentation
