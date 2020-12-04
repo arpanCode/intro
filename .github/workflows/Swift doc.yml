@@ -18,6 +18,16 @@ jobs:
           module-name: "TestAppSite"
           output: "Documentation"
           format: "html"
+          
+          
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: Documentation
+            
+#       Publish to Wikki
+            
 #       - name: Upload Documentation to Wiki
 #         uses: SwiftDocOrg/github-wiki-publish-action@v1
 #         with:
@@ -35,14 +45,15 @@ jobs:
 #           # The remote repository that publishing source for GitHub Pages site, defaults to current repo and is formatted like 'user/repo-name'
 #           # The personal access token that authorize repo access
 #           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
-      - name: Install and Build 🔧
-        run:
-            npm install
-            npm run-script build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-            GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}}
-            BRANCH: main
-            FOLDER: Documentation
+#       - name: Install and Build 🔧
+#         run:
+#             npm install
+#             npm run-script build
+
+#       - name: Deploy 🚀
+#         uses: JamesIves/github-pages-deploy-action@3.6.2
+#         with:
+#             GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}}
+#             BRANCH: main
+#             FOLDER: Documentation
