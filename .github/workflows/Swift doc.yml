@@ -18,7 +18,10 @@ jobs:
           module-name: "TestAppSite"
           output: "Documentation"
           format: "html"
-          
+        
+      - name: Install Dependencies
+        run: sudo chown -R $USER /usr/local
+
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
