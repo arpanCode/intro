@@ -20,7 +20,7 @@ jobs:
           format: "html"
         
       - name: Permissions
-        run: sudo chmod 777 GITHUB_WORKSPACE
+        run: sudo chown -R $(whoami) ~/.npm
         
       - name: Deploy to GitHub Pages
         if: success()
