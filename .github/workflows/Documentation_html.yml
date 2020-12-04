@@ -1,4 +1,4 @@
-name: Documentation Github Pages
+name: Documentation
 
 on: 
   push:
@@ -21,8 +21,10 @@ jobs:
 
       - name: Permissions
         run: sudo chown -R $USER:$USER /home/runner/work/intro.io/intro.io/Documentation
-          
-      - name: GitHub Pages
+ 
+ #   Publish to Github Pages
+       
+      - name: Deploy 🚀 GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           keep_history: true
@@ -30,7 +32,21 @@ jobs:
           build_dir:  Documentation
         env:
            GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}} 
-
+  
+  #   Publish to Wikki
+      - name: Generate Documentation
+        uses: SwiftDocOrg/swift-doc@master
+        with:
+          inputs: "TestAppSite/Sources"
+          module-name: "TestAppSite"
+          output: "Wiki"
+      
+      - name: Upload Documentation to Wiki
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
+        with:
+          path: "Wiki"
+        env:
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
 
         
 #       - name: Deploy to GitHub Pages
@@ -48,14 +64,6 @@ jobs:
 #             github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 #             publish_dir: Documentation
             
-#       Publish to Wikki
-            
-#       - name: Upload Documentation to Wiki
-#         uses: SwiftDocOrg/github-wiki-publish-action@v1
-#         with:
-#           path: "Documentation"
-#         env:
-#           GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN}}
           
 #       - name: Publish to GitHub Pages
 #         uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
