@@ -16,7 +16,7 @@ jobs:
         with:
           inputs: "TestAppSite/TestAppSite"
           module-name: "TestAppSite"
-          output: "Documentation"
+          output: "docs"
           format: "html"
           base-url: "./"
 
@@ -27,9 +27,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: Documentation
+          publish_dir: ./docs
           enable_jekyll: true
-          cname: arpan.io/intro
+          cname: github.arpan.io
 
 #       - name: Deploy 🚀 GitHub Pages
 #         uses: crazy-max/ghaction-github-pages@v2.2.0
