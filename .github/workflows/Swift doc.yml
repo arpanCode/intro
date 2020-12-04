@@ -19,12 +19,20 @@ jobs:
           output: "Documentation"
           format: "html"
           
-          
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
         with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: Documentation
+          target_branch: main
+          build_dir: Documentation
+        env:
+          GITHUB_TOKEN: ${{secrets.GH_PERSONAL_ACCESS_TOKEN}}  
+      
+#       - name: Deploy
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#             github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+#             publish_dir: Documentation
             
 #       Publish to Wikki
             
