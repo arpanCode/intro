@@ -79,7 +79,7 @@
 		AB36DA082578EE2800EEE596 = {
 			isa = PBXGroup;
 			children = (
-				AB36DA132578EE2800EEE596 /* TestAppSite */,
+				AB36DA132578EE2800EEE596 /* Sources */,
 				AB36DA2A2578EE2A00EEE596 /* TestAppSiteTests */,
 				AB36DA352578EE2A00EEE596 /* TestAppSiteUITests */,
 				AB36DA122578EE2800EEE596 /* Products */,
@@ -96,7 +96,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AB36DA132578EE2800EEE596 /* TestAppSite */ = {
+		AB36DA132578EE2800EEE596 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				AB36DA142578EE2800EEE596 /* AppDelegate.swift */,
@@ -107,7 +107,7 @@
 				AB36DA1F2578EE2A00EEE596 /* LaunchScreen.storyboard */,
 				AB36DA222578EE2A00EEE596 /* Info.plist */,
 			);
-			path = TestAppSite;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		AB36DA2A2578EE2A00EEE596 /* TestAppSiteTests */ = {
