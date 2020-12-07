@@ -8,7 +8,7 @@
 
 import Foundation
 
-public TestA : NSObject {
+public class TestA : NSObject {
   
   public func testA(){
     
