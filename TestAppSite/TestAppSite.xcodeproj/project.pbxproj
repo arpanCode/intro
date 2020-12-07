@@ -15,6 +15,7 @@
 		AB36DA212578EE2A00EEE596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB36DA1F2578EE2A00EEE596 /* LaunchScreen.storyboard */; };
 		AB36DA2C2578EE2A00EEE596 /* TestAppSiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36DA2B2578EE2A00EEE596 /* TestAppSiteTests.swift */; };
 		AB36DA372578EE2A00EEE596 /* TestAppSiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB36DA362578EE2A00EEE596 /* TestAppSiteUITests.swift */; };
+		AB85A8B0257E307A0034A847 /* SwiftDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB85A8AF257E307A0034A847 /* SwiftDoc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AB36DA322578EE2A00EEE596 /* TestAppSiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppSiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB36DA362578EE2A00EEE596 /* TestAppSiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppSiteUITests.swift; sourceTree = "<group>"; };
 		AB36DA382578EE2A00EEE596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB85A8AF257E307A0034A847 /* SwiftDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDoc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				AB36DA142578EE2800EEE596 /* AppDelegate.swift */,
 				AB36DA162578EE2800EEE596 /* SceneDelegate.swift */,
 				AB36DA182578EE2800EEE596 /* ViewController.swift */,
+				AB85A8AF257E307A0034A847 /* SwiftDoc.swift */,
 				AB36DA1A2578EE2800EEE596 /* Main.storyboard */,
 				AB36DA1D2578EE2A00EEE596 /* Assets.xcassets */,
 				AB36DA1F2578EE2A00EEE596 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB85A8B0257E307A0034A847 /* SwiftDoc.swift in Sources */,
 				AB36DA192578EE2800EEE596 /* ViewController.swift in Sources */,
 				AB36DA152578EE2800EEE596 /* AppDelegate.swift in Sources */,
 				AB36DA172578EE2800EEE596 /* SceneDelegate.swift in Sources */,
