@@ -14,3 +14,11 @@ public class TestA : NSObject {
     
   }
 }
+
+
+public class TestB : NSObject {
+  
+  public func testB(){
+    
+  }
+}
