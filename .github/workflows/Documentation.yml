@@ -18,6 +18,7 @@ jobs:
           module-name: "TestAppSite"
           output: "Documentation"
           format: "html"
+          base-url: https://arpancode.github.io/intro/
 
       - name: Permissions
         run: sudo chown -R $USER:$USER /home/runner/work/
